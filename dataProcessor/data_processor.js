@@ -1,14 +1,7 @@
-const fs = require("fs");
+import fs from "fs";
+import getPool from "../dbDetails.js";
 
-const Pool = require("pg").Pool;
-
-const pool = new Pool({
-  user: "postgres",
-  host: "localhost",
-  database: "postgres",
-  password: "postgres",
-  port: 5432,
-});
+const pool = getPool();
 
 fs.readFile(
   "dataProcessor/dataProcessorEvents.json",

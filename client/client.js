@@ -1,5 +1,5 @@
-const fs = require("fs");
-const axios = require("axios");
+import fs from "fs";
+import axios from "axios";
 
 fs.readFile("client/events.json", "utf8", async (err, data) => {
   if (err) {

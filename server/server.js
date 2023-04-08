@@ -1,19 +1,12 @@
-const express = require("express");
-const fs = require("fs");
-const bodyParser = require("body-parser");
+import express from "express";
+import fs from "fs";
+import bodyParser from "body-parser";
+import getPool from "../dbDetails.js";
+
+const pool = getPool();
 
 const app = express();
 const port = 8000;
-
-const Pool = require("pg").Pool;
-
-const pool = new Pool({
-  user: "postgres",
-  host: "localhost",
-  database: "postgres",
-  password: "postgres",
-  port: 5432,
-});
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
